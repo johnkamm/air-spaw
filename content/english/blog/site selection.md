@@ -2,7 +2,7 @@
 title: "Farm Site Selection"
 date: 2018-09-24T11:07:10+06:00
 author: "John Kamm"
-image : "images/og2drone.jpg"
+image : "images/farm_aerial.jpg"
 bg_image: "images/fieldog2.jpg"
 categories: ["Planning"]
 tags: ["Cultivation"]
