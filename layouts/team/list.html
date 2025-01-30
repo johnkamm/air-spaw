@@ -1,0 +1,65 @@
+{{ define "main" }}
+
+<section class="page-title bg-2" style="background-image: url('/airspace/examplesite/images/fieldog2.jpg');">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="block">
+            <h1>Team</h1>
+            <p>this is meta description</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<section class="section team">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="title text-center">
+          {{ with site.Data.team.team }}
+            {{ if .enable }}
+              <h2>{{ .title | markdownify }}</h2>
+            {{ end }}
+        </div>
+      </div>
+    </div>
+      
+    <div class="row justify-content-center">
+      {{ range .team_member }}
+        <div class="col-lg-4 col-md-6">
+          <div class="team-member text-center mb-4">
+            <div class="member-photo">
+              <!-- Handle static images instead of assets -->
+              <img loading="lazy" decoding="async" class="img-fluid" 
+                src="{{ .image | relURL }}" 
+                alt="{{ .name }}">
+            </div>
+            
+            <div class="member-content mt-3">
+              <h3>{{ .name }}</h3>
+              <span>{{ .designation | markdownify }}</span>
+              <p>{{ .content | markdownify }}</p>
+              
+              <div class="member-social">
+                <ul class="list-inline">
+                  {{ range .social }}
+                    <li class="list-inline-item">
+                      <a href="{{ .link | safeURL }}">
+                        <i class="{{ .icon }}"></i>
+                      </a>
+                    </li>
+                  {{ end }}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      {{ end }}
+    </div>
+    {{ end }}
+  </div>
+</section>
+
+{{ end }}
