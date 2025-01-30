@@ -48,11 +48,26 @@ portfolio:
   bg_image: "images/fire44.jpg"
 
 
+featured_service:
+  enable : true
+  service_item:
+    # featured service item loop
+    - name : "Planning & Research"
+      icon : "fas fa-flask"
+      color : "primary"
+      content : "We use Science and Data to identify the best location for newly constructed farms. We utilize soil & water test results in order to condition soil and optimize fertigation schedules for existing farms."
 
-############################# Service ############################
-service:
-  enable: true
-  # service content comes from "service.md" file
+    # featured service item loop
+    - name : "Cultivation"
+      icon : "fas fa-leaf"
+      color : "primary-dark"
+      content : "We provide expert guidance on every aspect of your cultivation operation, from seed to harvest to sale."
+
+    # featured service item loop
+    - name : "Innovation & Mechanization"
+      icon : "fas fa-lightbulb"
+      color : "primary-darker"
+      content : "We utilize state-of-the-art technology to automate processes wherever possible, reducing labor inputs and maximizing efficiency to protect your bottom line."
 
 
 ############################ call to action ###########################

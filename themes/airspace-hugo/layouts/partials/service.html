@@ -1,5 +1,11 @@
-{{ with site.GetPage "/service" }}
-{{ with .Params.service }}
+{{ $serviceData := "" }}
+{{ if .IsHome }}
+  {{ $serviceData = .Params.service }}
+{{ else }}
+  {{ $serviceData = .Params.service }}
+{{ end }}
+
+{{ with $serviceData }}
 <section class="service">
   <div class="container">
     <div class="row">
@@ -21,5 +27,4 @@
     </div>
   </div>
 </section>
-{{ end }}
 {{ end }}
