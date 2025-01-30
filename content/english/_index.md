@@ -45,7 +45,7 @@ about:
 ######################### Portfolio ###############################
 portfolio:
   enable: false
-  bg_image: "images/fire3.jpg"
+  bg_image: "images/fire44.jpg"
 
 
 
@@ -58,7 +58,7 @@ service:
 ############################ call to action ###########################
 cta:
   enable: true
-  bg_image: "images/fire3.jpg"
+  bg_image: "images/fire44.jpg"
 
   title: "Invest Low | Yield High"
   content: "Read our articles section to learn more about our cultivation methodology and what we can bring to a project. <br>
