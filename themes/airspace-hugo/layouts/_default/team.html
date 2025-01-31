@@ -1,0 +1,42 @@
+{{ define "main" }}
+
+{{ partial "page-title.html" . }}
+
+<section class="team section">
+  <div class="container">
+    <div class="row">
+      {{ with site.Data.team.team }}
+      {{ if .enable }}
+      <div class="col-md-12">
+        <div class="title text-center">
+          <h2>{{ .title }}</h2>
+        </div>
+      </div>
+      {{ range .team_member }}
+      <div class="col-md-4">
+        <div class="team-member text-center">
+          <div class="member-photo">
+            <img class="img-fluid" src="{{ .image | relURL }}" alt="{{ .name }}">
+          </div>
+          <div class="member-content">
+            <h3>{{ .name }}</h3>
+            <span>{{ .designation }}</span>
+            <p>{{ .content }}</p>
+            <ul class="social list-inline">
+              {{ range .social }}
+              <li class="list-inline-item">
+                <a href="{{ .link }}"><i class="{{ .icon }}"></i></a>
+              </li>
+              {{ end }}
+            </ul>
+          </div>
+        </div>
+      </div>
+      {{ end }}
+      {{ end }}
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+{{ end }}
