@@ -1,0 +1,54 @@
+{
+  "name": "Southpaw | Innovative Cannabis Solutions",
+  "short_name": "Southpaw | Innovative Cannabis Solutions",
+  "lang": "en-US",
+  "theme_color": "#655e7a",
+  "background_color": "#fff",
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  "icons": [
+    {
+      "src": "/images/favicon2_hu_5323e3288673d575.png",
+      "sizes": "48x48",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/favicon2_hu_9bd07038418050bd.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/favicon2_hu_4ff2b0450824f98d.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/favicon2_hu_c8f0353ca420458f.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/favicon2_hu_246497c253334252.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/favicon2_hu_e6ed94cbf1d1d2dd.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  
+  
+  "display": "standalone",
+  "start_url": "/?utm_source=web_app_manifest"
+}

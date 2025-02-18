@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Accounting on Southpaw | Innovative Cannabis Solutions</title>
+    <link>http://localhost:1313/tags/accounting/</link>
+    <description>Recent content in Accounting on Southpaw | Innovative Cannabis Solutions</description>
+    <generator>Hugo</generator>
+    <language>en-US</language>
+    <lastBuildDate>Tue, 24 Sep 2024 11:07:10 +0600</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/accounting/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Why invest in cannabis?</title>
+      <link>http://localhost:1313/blog/whycannabis/</link>
+      <pubDate>Tue, 24 Sep 2024 11:07:10 +0600</pubDate>
+      <guid>http://localhost:1313/blog/whycannabis/</guid>
+      <description>&lt;p&gt;The cannabis industry presents a unique and lucrative opportunity for investors due to its rapid growth, expanding legalization, and increasing consumer demand. Here’s why investing in cannabis is an attractive option:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>COGS (Cost of Goods Sold) in Cannabis Cultivation in Michigan</title>
+      <link>http://localhost:1313/blog/cogs/</link>
+      <pubDate>Mon, 24 Sep 2018 11:07:10 +0600</pubDate>
+      <guid>http://localhost:1313/blog/cogs/</guid>
+      <description>&lt;p&gt;COGS in the cannabis industry refers to the direct costs associated with producing and cultivating cannabis products that are sold by licensed operators. In Michigan, these costs are essential for calculating profitability and determining how much revenue is needed to cover expenses.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>EBITDA (Earnings Before Interest Taxes Depreciation &amp; Amortization) in Cannabis Cultivation in Michigan</title>
+      <link>http://localhost:1313/blog/ebidta/</link>
+      <pubDate>Mon, 24 Sep 2018 11:07:10 +0600</pubDate>
+      <guid>http://localhost:1313/blog/ebidta/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

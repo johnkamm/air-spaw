@@ -31,7 +31,7 @@ banner:
   button:
     enable: true
     label: "Discover Our Project"
-    link: "project/"
+    link: "service/"
 
 ############################# About #################################
 about:

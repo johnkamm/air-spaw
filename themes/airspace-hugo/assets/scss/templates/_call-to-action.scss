@@ -1,7 +1,9 @@
 .call-to-action {
-  position: relative; // Add this line to position the overlay
+  position: relative;
   text-align: center;
   padding: 70px 0px;
+  background-size: cover;
+  background-position: center;
 
   &:before {
     content: "";
@@ -10,8 +12,8 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, .9); // Adjust the opacity here (0.5 = 50% opacity)
-    z-index: 1; // Ensure the overlay is below the content
+    background-color: rgba(0, 0, 0, 0.4); // Start with a light darkening (0.3 = 30% opacity)
+    z-index: 1;
   }
 
   @include tablet {
@@ -20,8 +22,8 @@
   }
 
   h2, p {
-    position: relative; // Add this line to position the content above the overlay
-    z-index: 2; // Ensure the content is above the overlay
+    position: relative;
+    z-index: 2;
     color: $white;
   }
 
@@ -31,12 +33,12 @@
   }
 
   p {
-    margin: 0; // Add this line to remove the default margin
+    margin: 0;
   }
 
   .btn-main {
-    position: relative; // Add this line to position the button above the overlay
-    z-index: 2; // Ensure the button is above the overlay
+    position: relative;
+    z-index: 2;
     padding: 15px 35px;
     font-size: 12px;
     margin-top: 30px;
