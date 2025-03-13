@@ -39,13 +39,13 @@ featured_service:
 ############################# Service ###############################
 service:
   enable : true
-  title : "Our Services"
-  description : "Southpaw Strategies has seamlessly optimized the transition from traditional agriculture to specialized crop production"
+  title : "Cultivation on the cheap"
+  description : "Southpaw Strategies has optimized the transition from traditional agriculture to specialized crop production"
   service_item:
     # service item loop
     - icon : fas fa-tractor #https://fontawesome.com/v5.15/icons
-      name: Mechanization
-      content: "We utilize mechanization to reduce labor costs while preserving high-quality standards"
+      name: Mechanization -- Dialed in
+      content: "From planting to harvest, farmers use machines to do the heavy lifting. We've developed proprietary machines that streamline cannabis cultivation"
 
     # service item loop
     - icon : fas fa-bug #https://fontawesome.com/v5.15/icons

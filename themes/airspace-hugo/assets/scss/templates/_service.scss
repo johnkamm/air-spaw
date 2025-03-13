@@ -8,11 +8,27 @@
   }
 
   .service-item {
-    padding-bottom: 30px;
+    padding-bottom: 20px;
+    position: relative;
+    
+    /* Create an icon container with fixed dimensions */
+    .icon-container {
+      height: 80px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 15px;
+    }
 
     i {
       font-size: 50px;
       color: $color-primary;
+      /* Critical fix: Fixed width for icons */
+      width: 80px; 
+      text-align: center;
+      display: inline-block;
+      line-height: 1;
     }
 
     h4 {
@@ -21,6 +37,12 @@
       margin-top: 10px;
       font-weight: 500;
       text-transform: uppercase;
+      min-height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      text-align: center;
     }
 
     p {
@@ -30,6 +52,7 @@
   }
 }
 
+/* Keep the rest of your SCSS the same */
 .dark-service {
   .title {
     color: $white;
@@ -42,6 +65,9 @@
     i {
       color: $white;
       font-size: 40px;
+      width: 80px; /* Apply fixed width here too */
+      text-align: center;
+      display: inline-block;
       margin-bottom: 10px;
     }
 
@@ -67,16 +93,16 @@
   }
 }
 
-
-
-
-
 .service-arrow {
   .block {
     padding: 70px 30px;
 
     i {
       font-size: 40px;
+      /* Apply fixed width to these icons as well */
+      width: 80px;
+      text-align: center;
+      display: inline-block;
     }
 
     p {
@@ -85,12 +111,9 @@
   }
 }
 
-
-
-
 .service-list {
   .block {
-    padding: 30px;
+    padding: 20px;
     margin-bottom: 20px;
     background: $white;
   }

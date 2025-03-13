@@ -1,6 +1,6 @@
 ---
 title: "Team"
-description: "Meet the team"
+description: "Meet Our Team"
 bg_image: "images/fieldog2.jpg"
 layout: "team"
 draft: false

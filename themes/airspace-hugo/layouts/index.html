@@ -26,54 +26,53 @@
 {{ end }}
 <!-- /banner -->
 
-<!-- about -->
-{{ with .Params.about }}
-{{ if .enable }}
-<section class="about section">
+<!-- Service section - directly after banner -->
+{{ if .Params.service.enable }}
+<section class="service">
   <div class="container">
     <div class="row">
-      <div class="col-md-7 col-sm-12">
-        <div class="block">
-          <div class="section-title">
-            {{ with .title }}<h2>{{ . | markdownify }}</h2>{{ end }}
-            {{ with .description }}{{ . | $.Page.RenderString (dict "display" "block") }}{{ end }}
+      <div class="section-title">
+        {{ with .Params.service.title }}<h2>{{ . | markdownify }}</h2>{{ end }}
+        {{ with .Params.service.description }}<p>{{ . | markdownify }}</p>{{ end }}
+      </div>
+    </div>
+    <div class="row">
+      <!-- First 4 items -->
+      {{ range first 4 .Params.service.service_item }}
+      <div class="col-sm-6 col-md-3">
+        <div class="service-item">
+          <div style="height: 80px; width: 100%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+            <i class="{{ .icon }}" style="font-size: 50px; line-height: 1; width: 80px; text-align: center; display: inline-block;"></i>
           </div>
-          {{ with .content }}{{ . | $.Page.RenderString (dict "display" "block") }}{{ end }}
+          <div style="min-height: 50px; display: flex; align-items: center; justify-content: center;">
+            <h4 style="text-align: center;">{{ .name | markdownify }}</h4>
+          </div>
+          <p>{{ .content | markdownify }}</p>
         </div>
       </div>
-      <div class="col-md-5 col-sm-12">
-        <div class="block">
-          <img src="{{ .image | relURL }}" class="img-responsive" alt="Img">
-        </div>
-      </div>
+      {{ end }}
     </div>
-  </div>
-</section>
-{{ end }}
-{{ end }}
-<!-- /about -->
-
-<!-- portfolio -->
-{{ with .Params.portfolio }}
-{{ if .enable }}
-<section class="feature bg-2" style="background-image: url('{{ .bg_image | relURL }}')">
-  <div class="container">
+    
     <div class="row">
-      <div class="col-md-6 col-md-offset-6">
-        {{ with .title }}<h2 class="section-subtitle">{{ . | markdownify }}</h2>{{ end }}
-        {{ with .content }}{{ . | $.Page.RenderString (dict "display" "block") }}{{ end }}
-        {{ with .button }}
-        {{ if .enable }}
-        <a href="{{ .link | relLangURL }}" class="btn btn-view-works">{{ .label }}</a>
-        {{ end }}
-        {{ end }}
+      <!-- Last 4 items -->
+      {{ range last 4 .Params.service.service_item }}
+      <div class="col-sm-6 col-md-3">
+        <div class="service-item">
+          <div style="height: 80px; width: 100%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+            <i class="{{ .icon }}" style="font-size: 50px; line-height: 1; width: 80px; text-align: center; display: inline-block;"></i>
+          </div>
+          <div style="min-height: 50px; display: flex; align-items: center; justify-content: center;">
+            <h4 style="text-align: center;">{{ .name | markdownify }}</h4>
+          </div>
+          <p>{{ .content | markdownify }}</p>
+        </div>
       </div>
+      {{ end }}
     </div>
   </div>
 </section>
 {{ end }}
-{{ end }}
-<!-- /portfolio -->
+<!-- /Service section -->
 
 <!-- featured service -->
 {{ with .Params.featured_service }}
@@ -97,10 +96,168 @@
 {{ end }}
 <!-- /featured service -->
 
+    
+<!-- Video section -->
+{{ if .Params.video.enable }}
+<section class="video-section">
+  <div class="container-fluid">
+    <div class="row video-row">
+      <div class="col-md-12">
+        <video controls autoplay muted loop class="w-100">
+          <source src="{{ "images/dronevid1.mp4" | relURL }}" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+
+<!-- team -->
+{{ if .Params.team.enable }}
+<section class="team section">
+  <div class="container">
+    <div class="row">
+      {{ with site.Data.team.team }}
+      {{ if .enable }}
+      <div class="col-md-12">
+        <div class="section-title">
+          <h2>{{ .title }}</h2>
+        </div>
+      </div>
+      {{ end }}
+      {{ end }}
+    </div>
+    
+    <div class="row">
+      {{ with site.Data.team.team }}
+      {{ range .team_member }}
+      <div class="col-md-4">
+        <div class="team-member">
+          <div class="member-photo">
+            <!-- Natural aspect ratio approach -->
+            <img src="{{ .image | relURL }}" alt="{{ .name }}">
+          </div>
+          <div class="member-content">
+            <h3>{{ .name }}</h3>
+            <span>{{ .designation }}</span>
+            <p>{{ .content }}</p>
+            <ul class="social list-inline">
+              {{ range .social }}
+              <li class="list-inline-item">
+                <a href="{{ .link }}"><i class="{{ .icon }}"></i></a>
+              </li>
+              {{ end }}
+            </ul>
+          </div>
+        </div>
+      </div>
+      {{ end }}
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+<!-- /team, -->
+
+
+
 <!-- call to action -->
 {{ if .Params.cta.enable }}
 {{ partial "cta.html" . }}
 {{ end }}
 <!-- /call to action -->
+
+<!-- contact section-->
+{{ if .Params.contact.enable }}
+<section class="contact-form">
+  <div class="container">
+    <!-- Add title and description here -->
+    <div class="row">
+      <div class="col-md-12">
+        <div class="section-title text-center">
+          <h2>Contact Us</h2>
+          <p>Have questions about our cultivation methodology? We're here to help.</p>
+        </div>
+      </div>
+    </div>
+    
+    {{ with site.Params.contact.form }}{{ if .enable -}}
+    <div class="row">
+            <!-- Rest of form code -->
+
+      <form method="POST" {{ if .use_netlify }}name="{{ printf "contact_%s" $.Language.Lang }}" action="{{ "/message_sent" | relLangURL }}" netlify netlify-honeypot="nhp"{{ else }}name="contact" action="{{ .action | safeURL }}"{{ end }}>
+        <div class="col-md-6 col-sm-12">
+          <div class="block">
+            <div class="form-group">
+              <label for="name" hidden>{{ i18n "contact_form_name" }}</label>
+              <input id="name" name="name" type="text" class="form-control" placeholder="{{ i18n "contact_form_name" }}" required>
+            </div>
+            <div class="form-group">
+              <label for="email" hidden>{{ i18n "contact_form_email" }}</label>
+              <input id="email" name="email" type="email" autocomplete="email" class="form-control" placeholder="{{ i18n "contact_form_email" }}" required>
+            </div>
+            <div class="form-group">
+              <label for="subject" hidden>{{ i18n "contact_form_subject" }}</label>
+              <input id="subject" name="subject" type="text" class="form-control" placeholder="{{ i18n "contact_form_subject" }}" required>
+            </div>
+            {{ if .use_netlify -}}
+            <div class="form-group-h">
+              <input name="nhp" type="text" class="form-control" placeholder="Are you made of flesh and bone?">
+            </div>
+            {{- end }}
+            {{ if .use_recaptcha -}}
+            <div class="form-group-h">
+              <input type="hidden" id="captchaResponse" name="g-recaptcha-response">
+            </div>
+            {{- end }}
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+          <div class="block">
+            <div class="form-group-2">
+              <label for="message" hidden>{{ i18n "contact_form_message" }}</label>
+              <textarea id="message" name="message" class="form-control" rows="4" placeholder="{{ i18n "contact_form_message" }}" required></textarea>
+            </div>
+            <button class="btn btn-default" type="submit">{{ i18n "submit" }}</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    {{- end }}{{ end }}
+    <div class="contact-box row">
+      {{ with site.Params.contact -}}
+      <div class="col-md-6 col-sm-12">
+        <div class="block">
+          <h2>{{ i18n "address_title" }}</h2>
+          <ul class="address-block">
+            {{ $add_address_descriptors := .address_descriptors }}
+            {{ with site.Params.location }}<li><i class="fas fa-map-marker-alt"></i>{{ if $add_address_descriptors }}{{ i18n "location" | printf "%s: " }}{{ end }}<div>{{ . | markdownify }}</div></li>{{ end }}
+            {{ with site.Params.email }}<li><i class="fas fa-envelope"></i>{{ if $add_address_descriptors }}{{ i18n "email" | printf "%s: " }}{{ end }}{{ partial "cloak_email" . }}</li>{{ end }}
+            {{ with site.Params.phone }}<li><i class="fas fa-tty"></i>{{ if $add_address_descriptors }}{{ i18n "phone" | printf "%s: " }}{{ end }}{{ . }}</li>{{ end }}
+          </ul>
+          <ul class="social-icons">
+            {{ range .Site.Params.social }}
+            <li><a href="{{ .link | safeURL }}"><i class="{{ .icon }}"></i></a></li>
+            {{ end }}
+          </ul>
+        </div>
+      </div>
+      {{- end }}
+      {{ if site.Params.gmap.enable -}}
+      <div class="col-md-6 col-sm-12">
+        <div class="block">
+          <div class="google-map">
+            <div class="map" id="map" data-latitude="{{ site.Params.gmap.map_latitude }}" data-longitude="{{ site.Params.gmap.map_longitude }}" data-marker="{{ site.Params.gmap.map_marker | relURL }}" data-marker-name="{{ site.Title }}"></div>
+          </div>
+        </div>
+      </div>
+      {{- end }}
+    </div>
+  </div>
+</section>
+
+{{ end }}
+
 
 {{ end }}

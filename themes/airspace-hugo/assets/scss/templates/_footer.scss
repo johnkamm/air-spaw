@@ -1,8 +1,10 @@
 .footer {
-  background: darken( $light, 1.5);
-  min-height: 205px;
+  background: darken($light, 1.5);
+  min-height: 50px; /* Changed from 205px */
   text-align: center;
-  padding-top: 67px;
+  padding-top: 10px; /* Changed from 67px */
+  /* Add bottom padding for balance */
+  padding-bottom: 10px;
   p {
     font-size: 13px;
     line-height: 25px;
@@ -12,13 +14,13 @@
     color: lighten( $black, 34.9 );
   }
   .footer-menu {
-    padding-bottom: 25px;
+    padding-bottom: 15px;
     ul {
       margin: 0px;
       padding: 0px;
       li {
         display: inline-block;
-        padding: 0px 20px;
+        padding: 0px 15px;
         a {
           display: inline-block;
           color: lighten( $black, 28.6 );

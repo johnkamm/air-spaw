@@ -1,7 +1,7 @@
 .contact-form {
   padding-top: 70px;
   padding-bottom: 35px;
-
+ 
   .block {
     .form-group {
       padding-bottom: 15px;
@@ -18,12 +18,12 @@
 
     .form-group-2 {
       margin-bottom: 13px;
-
+    
       textarea {
-        background: darken( $light, 0.992);
+        background: darken($light, 0.992);
         height: 135px;
-        border: 1px solid black;
-        box-shadow: 1;
+        border: 2px solid black; // Changed to match other inputs
+        box-shadow: 10px 5px 5px gray; // Added the same shadow as other inputs
         width: 100%;
       }
     }

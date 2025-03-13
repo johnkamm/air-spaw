@@ -15,11 +15,33 @@
       </div>
     </div>
     <div class="row">
-      {{ range .service_item }}
+      <!-- First 4 items -->
+      {{ range first 4 .service_item }}
       <div class="col-sm-6 col-md-3">
         <div class="service-item">
-          <i class="{{ .icon }}"></i>
-          <h4>{{ .name | markdownify }}</h4>
+          <div style="height: 80px; width: 100%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+            <i class="{{ .icon }}" style="font-size: 50px; line-height: 1; width: 80px; text-align: center; display: inline-block;"></i>
+          </div>
+          <div style="min-height: 50px; display: flex; align-items: center; justify-content: center;">
+            <h4 style="text-align: center;">{{ .name | markdownify }}</h4>
+          </div>
+          <p>{{ .content | markdownify }}</p>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+    
+    <div class="row">
+      <!-- Last 4 items -->
+      {{ range last 4 .service_item }}
+      <div class="col-sm-6 col-md-3">
+        <div class="service-item">
+          <div style="height: 80px; width: 100%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+            <i class="{{ .icon }}" style="font-size: 50px; line-height: 1; width: 80px; text-align: center; display: inline-block;"></i>
+          </div>
+          <div style="min-height: 50px; display: flex; align-items: center; justify-content: center;">
+            <h4 style="text-align: center;">{{ .name | markdownify }}</h4>
+          </div>
           <p>{{ .content | markdownify }}</p>
         </div>
       </div>
